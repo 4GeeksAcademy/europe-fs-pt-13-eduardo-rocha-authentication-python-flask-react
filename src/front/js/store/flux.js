@@ -3,24 +3,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			token: null,
 			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
+			
 
 			syncTokenFromSessionStore: () => {
 				const token = sessionStorage.getItem("token");
@@ -41,13 +28,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
-						"email": email,
-						"password": password
+						email: email,
+						password: password
 					})
 				};
 
 				try{
-				const resp = await fetch("https://super-barnacle-rjv9xww6wjxcpj45-3001.app.github.dev/api/token", opts)
+				const resp = await fetch("https://stunning-couscous-6j76pww5wppc47j5-3001.app.github.dev/api/token", opts)
 				if (resp.status !== 200){
 					alert("Error detected");
 					return false;
@@ -73,7 +60,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				try{
 					// fetching data from the backend
-					const resp = await fetch("https://super-barnacle-rjv9xww6wjxcpj45-3001.app.github.dev/api/hello", opts)
+					const resp = await fetch("https://stunning-couscous-6j76pww5wppc47j5-3001.app.github.dev/api/hello", opts)
 					const data = await resp.json()
 					setStore({ message: data.message })
 					// don't forget to return something, that is how the async resolves
