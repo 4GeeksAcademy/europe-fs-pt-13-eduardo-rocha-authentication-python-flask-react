@@ -10,6 +10,9 @@ export const Home = () => {
 		if(store.token && store.token !="" && store.token !=null) actions.getMessage();
 	}, [store.token])
 
+	let sessiontoken = sessionStorage.getItem("token")
+
+
 	return (
 		<div className="text-center mt-5">
 			<h1>Hello Rigo!!</h1>
@@ -18,6 +21,7 @@ export const Home = () => {
 			</p>
 			<div className="alert alert-info">
 				{store.message}
+				<p>Session: {sessiontoken}</p>
 			</div>
 			<p>
 				This boilerplate comes with lots of documentation:{" "}
@@ -28,3 +32,4 @@ export const Home = () => {
 		</div>
 	);
 };
+

@@ -1,3 +1,5 @@
+import { Navigate } from "react-router-dom";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -71,6 +73,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return false;
 				} 
 				
+				/*Place here a code that if response from server is not ok then throws an error and throws the user to login
+				
+				if(!response.ok){
+					throw new Error('Network error')
+				}
+				also on the backend make email and password unique values.....research unique statement of inputs
+
+				*/
+
 				const data = await resp.json();
 				console.log("Backend data", data);
 				setStore({user: email, password});	
